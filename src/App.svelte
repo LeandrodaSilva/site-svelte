@@ -1,30 +1,59 @@
 <script lang="ts">
-	export let name: string;
+  import Layout from "./Layout.svelte";
+  import Switch from "./components/Switch.svelte";
+  export let name: string;
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<Layout>
+  <h1>{name}</h1>
+  <Switch />
+  <section class="headingMd padding1px">
+    <h2 class="headingLg">Contato</h2>
+    <ul class="list">
+      <li class="listItem">
+        <svg class="icon">
+          <use xlink:href="/svgs/regular.svg#envelope" />
+        </svg>
+        <a href="mailto:ld_silva13@hotmail.com?subject=Olá%20Leandro">
+          me@leandrodasilva.dev
+        </a>
+      </li>
+
+      <li class="listItem">
+        <svg class="icon">
+          <use xlink:href="/svgs/brands.svg#github" />
+        </svg>
+        <a href="https://github.com/LeandrodaSilva">LeandroDaSilva</a>
+      </li>
+
+      <li class="listItem">
+        <svg class="icon">
+          <use xlink:href="/svgs/brands.svg#keybase" />
+        </svg>
+        <a href="https://keybase.io/ldsilva">ldsilva</a>
+      </li>
+    </ul>
+  </section>
+</Layout>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  h1 {
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 100;
+    display: none;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  .listItem {
+    display: flex;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  .listItem a {
+    margin-left: 5px;
+  }
+
+  .icon {
+    height: 32px;
+    width: 32px;
+  }
 </style>
